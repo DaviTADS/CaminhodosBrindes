@@ -3,6 +3,8 @@ package com.mycompany.caminhodosbrindes;
 
 import antlr.collections.List;
 import java.util.ArrayList;
+import javax.persistence.Access;
+import javax.persistence.AccessType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -18,6 +20,7 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "TB_Image")
+@Access(AccessType.FIELD)
 public class Imagem {
     
     

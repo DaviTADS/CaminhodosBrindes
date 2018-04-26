@@ -11,17 +11,16 @@ import javax.persistence.EntityManagerFactory;
 import javax.persistence.EntityTransaction;
 import javax.persistence.Persistence;
 
-/**
- *
- * @author alunof16
- */
+
 public class SystemManager {
     
     
 
     public static void main(String[] args) {
         Cliente cliente = new Cliente();
-        preencherUsuario(cliente);
+        Produto produto = new Produto();
+        preencherCliente(cliente);
+        preencherProduto(produto);
         EntityManagerFactory emf = null;
         EntityManager em = null;
         EntityTransaction et = null;
@@ -32,6 +31,7 @@ public class SystemManager {
             et = em.getTransaction(); //Recupera objeto responsável pelo gerenciamento de transação.
             et.begin();
             em.persist(cliente);
+            em.persist(produto);
             et.commit();
         } catch (Exception ex) {
             if (et != null && et.isActive())
@@ -44,9 +44,9 @@ public class SystemManager {
         }
     }
 
-    private static void preencherUsuario(Usuario usuario) {
+    private static void preencherCliente(Cliente cliente) {
         
-        Cliente cliente = new Cliente();
+        
         cliente.setNome("Fulano");
         cliente.setEmail("fulano@gmail.com");
         cliente.setLogincliente("fulano");
@@ -57,6 +57,12 @@ public class SystemManager {
         cliente.setCidade("Recife");
         cliente.setBairro("Boa Viagem");
         
+        
+    }
+
+    private static void preencherProduto(Produto produto) {
+        
+        produto.setNome("caneca");
         
     }
     

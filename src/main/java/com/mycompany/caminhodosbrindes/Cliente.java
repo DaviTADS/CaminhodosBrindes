@@ -1,6 +1,8 @@
 package com.mycompany.caminhodosbrindes;
 
 import java.io.Serializable;
+import javax.persistence.Access;
+import javax.persistence.AccessType;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -18,8 +20,8 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name="TB_Cliente")
-
-public class Cliente extends Usuario implements Serializable {
+@Access(AccessType.FIELD)
+public class Cliente implements Serializable {
     
         @Id
         @Column(name = "User_ID")
@@ -73,7 +75,7 @@ public class Cliente extends Usuario implements Serializable {
         
          
         
-        @Override
+        
         void RealizaLogin(String logincliente,String senha) {
         
     }

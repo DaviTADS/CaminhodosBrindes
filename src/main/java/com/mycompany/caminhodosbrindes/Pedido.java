@@ -1,5 +1,7 @@
 package com.mycompany.caminhodosbrindes;
 
+import javax.persistence.Access;
+import javax.persistence.AccessType;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -13,7 +15,7 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name="TB_Pedido")
-
+@Access(AccessType.FIELD)
 public class Pedido {
     
         @Id
