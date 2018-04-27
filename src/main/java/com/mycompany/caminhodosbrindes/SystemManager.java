@@ -26,6 +26,7 @@ public class SystemManager {
             em.persist(cliente);
             em.persist(produto);
             et.commit();
+            
         } catch (Exception ex) {
             if (et != null && et.isActive()) {
                 et.rollback();
