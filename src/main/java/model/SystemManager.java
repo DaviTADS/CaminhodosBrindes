@@ -1,5 +1,5 @@
 
-package com.mycompany.caminhodosbrindes;
+package model;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;

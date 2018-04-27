@@ -1,5 +1,5 @@
 
-package com.mycompany.caminhodosbrindes;
+package model;
 
 import antlr.collections.List;
 import java.util.ArrayList;
@@ -7,9 +7,12 @@ import javax.persistence.Access;
 import javax.persistence.AccessType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
@@ -29,37 +32,26 @@ public class Imagem {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long idimagem;
     
+    @Column(name="Nome_image",nullable=false,length=100)
+    private String nome;
+    
     @Column(name="Image_01",nullable=false)
     private String imagem1;
     
     @Column(name="Image_02",nullable=false)
     private String imagem2;
     
-    @Column(name="Image_03",nullable=false)
+    @Column(name="Image_03",nullable=true)
     private String imagem3;
     
-    @Column(name="Cor_01",nullable=false)
-    private String cor1;
+    @Column(name="Image_04",nullable=false)
+    private String imagem4;
     
-    @Column(name="Cor_02",nullable=false)
-    private String cor2;
+    @Column(name="Image_05",nullable=false)
+    private String imagem5;
     
-    @Column(name="Cor_03",nullable=false)
-    private String cor3;
-    
-    @Column(name="Cor_04",nullable=true)
-    private String cor4;
-    
-    @Column(name="Cor_05",nullable=true)
-    private String cor5;
-    
-    @Column(name="Cor_06",nullable=true)
-    private String cor6;
-    
-    @Column(name="Cor_07",nullable=true)
-    private String cor7;
-    
-    @OneToMany(mappedBy="iamgem")
+    @ManyToOne(fetch=FetchType.LAZY,optional=false)
+    @JoinColumn(name="ID_Produto",referencedColumnName="id_image")
     private Produto produto;
     
 }

@@ -5,7 +5,7 @@
  */
 package Controller;
 
-import Model.Produto;
+import model.Produto;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.ServletException;
@@ -96,17 +96,17 @@ public class AdicionarProduto extends HttpServlet {
        String image5 = request.getParameter("image05");
        
        
-       if(nome!=null){ produto.SetNome(nome); } 
+       if(nome!=null){ produto.setNome(nome); } 
        else{ }
-       if(altura!=null){float alt = Float.parseFloat(altura);produto.SetAltura(alt); } 
+       if(altura!=null){float alt = Float.parseFloat(altura);produto.setAltura(alt); } 
        else{ }
-       if(largura!=null){float larg = Float.parseFloat(largura);produto.SetLargura(larg); } 
+       if(largura!=null){float larg = Float.parseFloat(largura);produto.setLargura(larg); } 
        else{ }
-        if(descricao!=null){ produto.SetDescricao(descricao); } 
+        if(descricao!=null){ produto.setDescricao(descricao); } 
        else{ }
-        if(outros!=null){ produto.SetNome(nome); } 
+        if(outros!=null){ produto.setNome(nome); } 
        else{ }
-        if(preco!=null){float prec = Float.parseFloat(preco);produto.Setpreco(prec); } 
+        if(preco!=null){float prec = Float.parseFloat(preco);produto.setPreco(prec); } 
        else{ }
        if(image1!=null){
            Byte i1 =Byte.parseByte(image1);produto.setImagem01(i1);
@@ -120,28 +120,28 @@ public class AdicionarProduto extends HttpServlet {
         Byte i5 =Byte.parseByte(image5);produto.setImagem01(i5);
         
        if(vermelho=="sim"){
-           produto.SetCorVermelho(1);
+           produto.setCorVermelho(1);
        }
        else{
-           produto.SetCorVermelho(0);
+           produto.setCorVermelho(0);
        }
        if(preto=="sim"){
-           produto.SetCorPreto(1);
+           produto.setCorPreto(1);
        }
        else{
-           produto.SetCorPreto(0);
+           produto.setCorPreto(0);
        }
        if(azul=="sim"){
-           produto.SetCorAzul(1);
+           produto.setCorAzul(1);
        }
        else{
-           produto.SetCorAzul(0);
+           produto.setCorAzul(0);
        }
        if(branco=="sim"){
-           produto.SetCorBranco(1);
+           produto.setCorBranco(1);
        }
        else{
-           produto.SetCorBranco(0);
+           produto.setCorBranco(0);
        }
        /**
      * 

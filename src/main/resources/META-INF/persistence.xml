@@ -2,15 +2,13 @@
 <persistence version="2.1" xmlns="http://xmlns.jcp.org/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd">
   <persistence-unit name="caminho">
     <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
-    
-    <class>com.mycompany.caminhodosbrindes.Administrador</class>
-    <class>com.mycompany.caminhodosbrindes.Cliente</class>
-    <class>com.mycompany.caminhodosbrindes.Pedido</class>
-    <class>com.mycompany.caminhodosbrindes.Produto</class>
-    <class>com.mycompany.caminhodosbrindes.Promocao</class>
-    <class>com.mycompany.caminhodosbrindes.CartaoCredito</class>
-    <class>com.mycompany.caminhodosbrindes.Imagem</class>
-    
+    <class>model.Imagem</class>
+    <class>model.CartaoCredito</class>
+    <class>model.Promocao</class>
+    <class>model.Produto</class>
+    <class>model.Administrador</class>
+    <class>model.Pedido</class>
+    <class>model.Cliente</class>
     <properties>
       <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/caminhodosbrindes?zeroDateTimeBehavior=convertToNull"/>
       <property name="javax.persistence.jdbc.user" value="root"/>

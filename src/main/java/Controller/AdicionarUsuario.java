@@ -5,7 +5,7 @@
  */
 package Controller;
 
-import Model.Cliente;
+import model.Cliente;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.ServletException;
@@ -79,21 +79,23 @@ public class AdicionarUsuario extends HttpServlet {
         String senha = request.getParameter("Senha_cliente");
         String sobrenome = request.getParameter("Sobrenome_cliente");
         String bairro = request.getParameter("Bairro_cliente");
-        String endereco = request.getParameter("Endereco_cliente");
+        String cidade = request.getParameter("Cidade_cliente");
+       // String endereco = request.getParameter("Endereco_cliente");
         String cep = request.getParameter("Cep_cliente");
         String telefone = request.getParameter("Telefone_cliente");
         String celular = request.getParameter("Celular_cliente");
         
-        cliente.SetBairro(bairro);
-        cliente.SetCelular(celular);
-        cliente.SetCep(cep);
-        cliente.SetEmail(email);
-        cliente.SetLogin(login);
-        cliente.SetNome(nome);
-        cliente.SetSobrenome(sobrenome);
-        cliente.SetTelefone(telefone);
-        cliente.SetSenha(senha);
-        cliente.SetEndereco(endereco);
+        cliente.setBairro(bairro);
+        cliente.setCelular(celular);
+        cliente.setCep(cep);
+        cliente.setEmail(email);
+        cliente.setLogincliente(login);
+        cliente.setNome(nome);
+        cliente.setSobrenome(sobrenome);
+        cliente.setTelefone(telefone);
+        cliente.setSenha(senha);
+        cliente.setCidade(cidade);
+        //cliente.setEndereco(endereco);
         
     }
 

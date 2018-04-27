@@ -1,14 +1,18 @@
 
-package com.mycompany.caminhodosbrindes;
+package model;
 
 import java.util.Date;
 import javax.persistence.Access;
 import javax.persistence.AccessType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
@@ -32,13 +36,14 @@ public class CartaoCredito {
     @Column(name="NomeTitular",nullable=false,length=45)
     private String nometitular;
     
-    @Column(name="Validae",nullable=false)
+    @Column(name="Validade",nullable=false)
     private Date validade;
     
     @Column(name="Bandeira",nullable=false,length=10)
     private String bandeira;
     
-    @OneToOne(mappedBy="cartaocredito",optional=false)
+    @ManyToOne(fetch=FetchType.LAZY,optional=false)
+    @JoinColumn(name="Cartao",referencedColumnName="ID_Cartao")
     private Cliente cliente;
 
     
