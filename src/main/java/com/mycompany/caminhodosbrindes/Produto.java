@@ -52,7 +52,7 @@ public class Produto implements Serializable {
 	private int quantidade;
         
         @Column(name="Cor",nullable = false,length=10)
-	private char cor;
+	private String cor;
         
         @Column(name="Preco",nullable=false)
         private float preco;
@@ -127,11 +127,11 @@ public class Produto implements Serializable {
         this.quantidade = quantidade;
     }
 
-    public char getCor() {
+    public String getCor() {
         return cor;
     }
 
-    public void setCor(char cor) {
+    public void setCor(String cor) {
         this.cor = cor;
     }
 

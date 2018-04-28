@@ -63,7 +63,7 @@ public class Cliente implements Serializable {
         
         @ManyToMany(fetch = FetchType.LAZY)
         @JoinTable(name="TB_Pedido",joinColumns = {
-                @JoinColumn(name="Status_Pedido")},
+                @JoinColumn(name="id_usu")},
                 inverseJoinColumns = {@JoinColumn(name="ID_Pedido")}
                 )
         private Produto produto;

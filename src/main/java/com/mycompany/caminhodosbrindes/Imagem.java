@@ -1,7 +1,7 @@
 
 package com.mycompany.caminhodosbrindes;
 
-import antlr.collections.List;
+
 import java.util.ArrayList;
 import javax.persistence.Access;
 import javax.persistence.AccessType;

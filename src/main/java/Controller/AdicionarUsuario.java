@@ -5,9 +5,11 @@
  */
 package Controller;
 
+import Model.BDManager;
 import Model.Cliente;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.sql.Connection;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -72,6 +74,12 @@ public class AdicionarUsuario extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         processRequest(request, response);
+        PrintWriter out = response.getWriter();
+        BDManager bd = new BDManager();
+        Connection conn = bd.getConnection();
+        if(conn== null){
+            out.print("ERROR");
+        }
         Cliente cliente = new Cliente();
         String nome = request.getParameter("Nome_cliente");
         String email = request.getParameter("Email_cliente");

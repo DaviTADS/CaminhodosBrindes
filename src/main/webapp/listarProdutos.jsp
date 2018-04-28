@@ -70,7 +70,7 @@
     
         <br>
         <div class="container">
-            <h3><b> Lista de Produtos</b><h3>
+            <h3 align="center"><b> Lista de Produtos</b><h3><br><br>
                     
                     
                     <div id="myModal" class="modal fade" role="dialog">
@@ -100,7 +100,37 @@
          
         </div>
     
-    
+        <div class="table-responsive" >          
+  <table class="table"   style="width: 100%" CELLPADDING="8" border="1" >
+    <thead>
+      <tr>
+        <th style="padding: 15px">ID</th>
+        <th style="padding: 15px">Nome</th>
+        <th style="padding: 15px">Altura</th>
+        <th style="padding: 15px">Largura</th>
+        <th style="padding: 15px">Quantidade</th>
+        <th style="padding: 15px">Tipo</th>
+        <th style="padding: 15px">Preço</th>
+        
+      </tr>
+    </thead>
+    <tbody>
+        <c:forEach items="${produto}" var="produto">
+      <tr>
+        <td><c:out value="${produto.id}" /></td>
+        <td><c:out value="${produto.nome}"/></td>
+        <td><c:out value="${produto.altura}"/></td>
+        <td><c:out value="${produto.largura}"/></td>
+        <td><c:out value="${produto.quantidade}"/></td>
+        <td><c:out value="${produto.tipo}"/></td>
+        <td><c:out value="${produto.preco}"/></td>
+
+        <td><a href="EditProduto"/>Update</a></td>
+<td><a href="DeleteProduto"/>Delete</a></td>
+        </tr></c:foreach>
+    </tbody>
+  </table>
+   </div>
     
     
     

@@ -11,6 +11,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
+import javax.persistence.Temporal;
 
 @Entity
 @Table(name="TB_CartaodeCredito")
@@ -32,7 +33,8 @@ public class CartaoCredito {
     @Column(name="NomeTitular",nullable=false,length=45)
     private String nometitular;
     
-    @Column(name="Validae",nullable=false)
+    @Column(name="Validade",nullable=false)
+    @Temporal(javax.persistence.TemporalType.DATE)
     private Date validade;
     
     @Column(name="Bandeira",nullable=false,length=10)

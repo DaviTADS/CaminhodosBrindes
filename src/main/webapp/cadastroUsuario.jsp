@@ -71,7 +71,7 @@
     <input type="name" class="form-control" id="Bairro_cliente">
   </div>  
          <div class="form-group">
-    <label for="Endereco_cliente">Endereço:</label>
+    <label for="Endereco_cliente">Cidade:</label>
     <input type="name" class="form-control" id="Endereco_cliente">
   </div>   
          <div class="form-group">

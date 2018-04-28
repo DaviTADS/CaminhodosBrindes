@@ -29,6 +29,15 @@ public class Pedido {
         @Column(name="Cartao_id")
         private Long cartaoid;
         
+        @Column(name="Arquivo_Pedido")
+        private String Arquivo_Pedido;  
+        
+        @Column(name="Mensagem")
+        private String Mensagem;
+        
+        @Column(name="id_usu")
+        private int id_usu;  
+        
         @OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL,optional=false)
         @JoinColumn(name = "ID_Cartao",referencedColumnName="Cartao_id")
         private CartaoCredito cartaocredito;
