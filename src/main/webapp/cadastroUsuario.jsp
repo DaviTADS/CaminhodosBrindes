@@ -48,49 +48,49 @@
 </nav>
         <br><br>
         
-        <form action ="AdicionarUsuario" method="post">
+        <form action="AdicionarUsuario" method="POST">
             <div class="container">
           <div class="form-group">
     <label for="Nome_cliente">Nome:</label>
-    <input type="name" class="form-control" id="Nome_cliente">
+    <input name="Nome_cliente" type="text" class="form-control" id="Nome_cliente">
      </div>
           <div class="form-group">
     <label for="Sobrenome_cliente">Sobrenome:</label>
-    <input type="name" class="form-control" id="Sobrenome_cliente">
+    <input name="Sobrenome_cliente" type="text" class="form-control" id="Sobrenome_cliente">
   </div>     
          <div class="form-group">
     <label for="Email_cliente">Email:</label>
-    <input type="email" class="form-control" id="Email_cliente">
+    <input name="Email_cliente" type="email" class="form-control" id="Email_cliente">
   </div>   
          <div class="form-group">
     <label for="Login_cliente">Nome de Usuário:</label>
-    <input type="name" class="form-control" id="Login_cliente">
+    <input  name="Login_cliente"type="text" class="form-control" id="Login_cliente">
   </div> 
           <div class="form-group">
     <label for="Bairro_cliente">Bairro:</label>
-    <input type="name" class="form-control" id="Bairro_cliente">
+    <input name="Bairro_cliente" type="text" class="form-control" id="Bairro_cliente">
   </div>  
          <div class="form-group">
-    <label for="Endereco_cliente">Cidade:</label>
-    <input type="name" class="form-control" id="Endereco_cliente">
+    <label for="Cidade_cliente">Cidade:</label>
+    <input name="Cidade_cliente"type="text" class="form-control" id="Cidade_cliente">
   </div>   
          <div class="form-group">
     <label for="Cep_cliente">CEP</label>
-    <input type="name" class="form-control" id="Cep_cliente">
+    <input name="Cep_cliente"type="number" class="form-control" id="Cep_cliente">
   </div>   
          <div class="form-group">
     <label for="Telefone_cliente">Telefone:</label>
-    <input type="name" class="form-control" id="Telefone_cliente">
+    <input  name="Telefone_cliente"type="number" class="form-control" id="Telefone_cliente">
   </div>  
           <div class="form-group">
     <label for="Celular_cliente">Celular:</label>
-    <input type="name" class="form-control" id="Celular_cliente">
+    <input name="Celular_cliente" type="number" class="form-control" id="Celular_cliente">
   </div>   
           <div class="form-group">
     <label for="Senha_cliente">Senha:</label>
-    <input type="password" class="form-control" id="Senha_cliente">
+    <input name="Senha_cliente" type="password" class="form-control" id="Senha_cliente">
           </div><br>
-            <button type="button" class="btn btn-success">Cadastrar</button>
+            <button type="submit" class="btn btn-success">Cadastrar</button>
             <button type="button" class="btn btn-danger">Cancelar</button>
             </div>
             

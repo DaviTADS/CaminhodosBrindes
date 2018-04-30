@@ -47,11 +47,11 @@
   </div>
 </nav>
         <br><br>
-        <form action="LoginServlet" method="POST">
+        <form action="loginServlet" method="post">
             <div class="container">
   <div class="form-group">
     <label for="usuario">Nome de Usuário</label>
-    <input type="text" class="form-control" id="usuario">
+    <input type="email" class="form-control" id="usuario">
   </div>
   <div class="form-group">
     <label for="senha">Senha : </label>

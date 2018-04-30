@@ -3,50 +3,152 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
+package model;
 
-package Model;
+import java.io.Serializable;
+import javax.persistence.Basic;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToOne;
+import javax.persistence.Table;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 
 /**
  *
- * @author Nome
+ * @author Usuario
  */
-public class Administrador {
-    int id;
-    String nome_administrador;
-    String email_administrador;
-    String senha_administrador;
-    String login_administrador;
+@Entity
+@Table(name = "tb_administrador")
+public class Administrador implements Serializable {
+
+    private static final long serialVersionUID = 1L;
     
-    public int getId(){
-        return id;
-       
+    @Id
+    @Basic(optional = false)
+    @NotNull
+    @Column(name = "id_Administrador")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Integer idAdministrador;
+    
+    @Basic(optional = false)
+    @NotNull
+    @Size(min = 1, max = 45)
+    @Column(name = "nome_Administrador")
+    private String nomeAdministrador;
+    
+    @Basic(optional = false)
+    @NotNull
+    @Size(min = 1, max = 45)
+    @Column(name = "email_Administrador")
+    private String emailAdministrador;
+    
+    @Basic(optional = false)
+    @NotNull
+    @Size(min = 1, max = 45)
+    @Column(name = "senha_Administrador")
+    private String senhaAdministrador;
+    
+    @Basic(optional = false)
+    @NotNull
+    @Size(min = 1, max = 45)
+    @Column(name = "login_Administrador")
+    private String loginAdministrador;
+    
+    @JoinColumn(name = "id_Administrador", referencedColumnName = "ID_Produto", insertable = false, updatable = false)
+    @OneToOne(optional = false)
+    private Produto produto;
+
+    public Administrador() {
     }
-    public void setId(int i){
-        this.id=i;
+
+    public Administrador(Integer idAdministrador) {
+        this.idAdministrador = idAdministrador;
     }
-    public String getNomeAdm(){
-        return nome_administrador;
+
+    public Administrador(Integer idAdministrador, String nomeAdministrador, String emailAdministrador, String senhaAdministrador, String loginAdministrador) {
+        this.idAdministrador = idAdministrador;
+        this.nomeAdministrador = nomeAdministrador;
+        this.emailAdministrador = emailAdministrador;
+        this.senhaAdministrador = senhaAdministrador;
+        this.loginAdministrador = loginAdministrador;
     }
-    public void setNomeAdm(String a){
-        this.nome_administrador=a;
+
+    public Integer getIdAdministrador() {
+        return idAdministrador;
     }
-    public String getEmailAdm(){
-        return email_administrador;
+
+    public void setIdAdministrador(Integer idAdministrador) {
+        this.idAdministrador = idAdministrador;
     }
-    public void setEmailAdm(String email){
-        this.email_administrador=email;
+
+    public String getNomeAdministrador() {
+        return nomeAdministrador;
     }
-    public String getSenhaAdm(){
-        return senha_administrador;
+
+    public void setNomeAdministrador(String nomeAdministrador) {
+        this.nomeAdministrador = nomeAdministrador;
     }
-    public void setSenhaAdm(String senha){
-        this.senha_administrador=senha;
+
+    public String getEmailAdministrador() {
+        return emailAdministrador;
     }
-    public String getLogin(){
-        return login_administrador;
-        
+
+    public void setEmailAdministrador(String emailAdministrador) {
+        this.emailAdministrador = emailAdministrador;
     }
-    public void setLogin(String login){
-        this.login_administrador=login;
+
+    public String getSenhaAdministrador() {
+        return senhaAdministrador;
     }
+
+    public void setSenhaAdministrador(String senhaAdministrador) {
+        this.senhaAdministrador = senhaAdministrador;
+    }
+
+    public String getLoginAdministrador() {
+        return loginAdministrador;
+    }
+
+    public void setLoginAdministrador(String loginAdministrador) {
+        this.loginAdministrador = loginAdministrador;
+    }
+
+    public Produto getProduto() {
+        return produto;
+    }
+
+    public void setProduto(Produto produto) {
+        this.produto = produto;
+    }
+
+    @Override
+    public int hashCode() {
+        int hash = 0;
+        hash += (idAdministrador != null ? idAdministrador.hashCode() : 0);
+        return hash;
+    }
+
+    @Override
+    public boolean equals(Object object) {
+        // TODO: Warning - this method won't work in the case the id fields are not set
+        if (!(object instanceof Administrador)) {
+            return false;
+        }
+        Administrador other = (Administrador) object;
+        if ((this.idAdministrador == null && other.idAdministrador != null) || (this.idAdministrador != null && !this.idAdministrador.equals(other.idAdministrador))) {
+            return false;
+        }
+        return true;
+    }
+
+    @Override
+    public String toString() {
+        return "model.Administrador[ idAdministrador=" + idAdministrador + " ]";
+    }
+    
 }

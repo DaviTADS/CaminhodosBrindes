@@ -3,8 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
-package Controller;
+package controller;
 
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -36,7 +35,7 @@ public class EditProduto extends HttpServlet {
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
-            out.println("<title>Servlet EditProduto</title>");            
+            out.println("<title>Servlet EditProduto</title>");
             out.println("</head>");
             out.println("<body>");
             out.println("<h1>Servlet EditProduto at " + request.getContextPath() + "</h1>");
@@ -72,8 +71,8 @@ public class EditProduto extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         processRequest(request, response);
-       String nome = request.getParameter("nomeProd"); 
-       
+        String nome = request.getParameter("nomeProd");
+
     }
 
     /**

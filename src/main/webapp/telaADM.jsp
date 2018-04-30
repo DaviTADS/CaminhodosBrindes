@@ -57,7 +57,7 @@
          <ul class="dropdown-menu">
              <li><a href="cadastroProdutos.jsp"><font color="yellow"><span class="glyphicon glyphicon-plus"></span> Cadastrar Produtos</font></a><li>
             <li><a href="editarProduto.jsp"><font color="yellow"><span class="glyphicon glyphicon-edit"></span> Editar Produtos</font></a><li>
-          <li><a href="listarProdutos.jsp"><font color="yellow"><span class="glyphicon glyphicon-list-alt"></span> Listar Produtos</font></a><li>
+          <li><a href="ListarProdutos"><font color="yellow"><span class="glyphicon glyphicon-list-alt"></span> Listar Produtos</font></a><li>
        <li><a href="deletarProdutos.jsp"><font color="yellow"><span class="glyphicon glyphicon-remove"></span> Deletar Produtos</font></a><li></ul></li>
        <li><a href="inicio.jsp"><font color="yellow"><span class="glyphicon glyphicon-log-out"></span> Sair</font></a></li>
      

@@ -69,10 +69,37 @@
     
     
         <br>
-        <div class="container">
-            <h3><b> Lista de Usuários</b><h3>
-        </div>
-    
+       <div class="table-responsive" >          
+  <table class="table"   style="width: 100%" CELLPADDING="8" border="1" >
+    <thead>
+      <tr>
+        <th style="padding: 15px">ID</th>
+        <th style="padding: 15px">Nome</th>
+        <th style="padding: 15px">Sobrenome</th>
+        <th style="padding: 15px">Email</th>
+        <th style="padding: 15px">Telefone</th>
+        <th style="padding: 15px">Celular</th>
+       
+        
+      </tr>
+    </thead>
+    <tbody>
+        <c:forEach items="${cliente}" var="cliente">
+      <tr>
+        <td><c:out value="${cliente.UserId}" /></td>
+        <td><c:out value="${cliente.Nome}"/></td>
+        <td><c:out value="${cliente.Sobrenome}"/></td>
+        <td><c:out value="${cliente.Email}"/></td>
+        <td><c:out value="${cliente.Telefone}"/></td>
+        <td><c:out value="${cliente.Celular}"/></td>
+       
+
+        <td><a href="EditUsuario"/>Update</a></td>
+<td><a href="DeleteUsuario"/>Delete</a></td>
+        </tr></c:foreach>
+    </tbody>
+  </table>
+   </div>
     
     
     

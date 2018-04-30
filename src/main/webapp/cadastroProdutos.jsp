@@ -70,50 +70,49 @@
             <div class="container">
           <div class="form-group">
     <label for="Nome_produto">Nome:</label>
-    <input type="name" class="form-control" id="Nome_produto">
+    <input  name="Nome_produto"type="text" class="form-control" id="Nome_produto">
      </div>
           <div class="form-group">
     <label for="Altura_produto">Altura do Produto : (Em metros)</label>
-    <input type="float" class="form-control" id="Altura_produto">
+    <input name="Altura_produto" type="float" class="form-control" id="Altura_produto">
   </div>     
          <div class="form-group">
     <label for="Largura_produto">Largura do Produto: (Em metros)</label>
-    <input type="float" class="form-control" id="Largura_produto">
+    <input name="Largura_produto" type="float" class="form-control" id="Largura_produto">
   </div>   
          <div class="form-group">
     <label for="Quantidade_produto">Quantidade minima para compra:</label>
-    <input type="number" class="form-control" id="Quantidade_produto">
+    <input name="Quantidade_produto"type="number" class="form-control" id="Quantidade_produto">
   </div> 
          <div class="form-group">
     <label for="preco_produto">Preço por Unidade :</label>
-    <input type="float" class="form-control" id="preco_produto">
+    <input name="preco_produto" type="float" class="form-control" id="preco_produto">
   </div> 
           <div class="form-group">
     <label for="Descricao_produto">Descrição:</label>
-    <textarea class="form-control" rows="5" id="Descricao_produto"></textarea>
+    <textarea  name="descricao_produto"class="form-control" rows="5" id="descricao_produto"></textarea>
 
   </div>  
          <div class="form-group">
     <label for="tipo_produto">Tipo do produto:</label>
-    <input type="name" class="form-control" id="tipo_produto">
+    <input name="tipo_produto"type="text" class="form-control" id="tipo_produto">
          </div>  <br>
-         <label> Cor do produto : </label><br>
-<label class="checkbox-inline"><input id="cor_vermelho"type="checkbox" value="Sim">Vermelho</label>
-<label class="checkbox-inline"><input id="cor_azul"type="checkbox" value="Sim">Azul</label>
-<label class="checkbox-inline"><input id="cor_preto" type="checkbox" value="Sim">Preto</label>
-<label class="checkbox-inline"><input id="cor_branco" type="checkbox" value="Sim">Branco</label><br><br>
-<label >Outras Cores :</label><input id="OutrasCores" type="name" class="form-control">
+         <div class="form-group">
+    <label for="cor">Cor do produto:</label>
+    <input name="cor"type="text" class="form-control" id="cor">
+         </div> 
+        
 
 <br><br>
  <label>Imagens : </label><br>
-<input type="file" id="image1"/>
-<input type="file" id="image2"/>
-<input type="file" id="image3"/>
-<input type="file" id="image4"/>
-<input type="file" id="image5"/>
+<input name="image1" type="file" id="image1"/>
+<input name="image2" type="file" id="image2"/>
+<input name="image3" type="file" id="image3"/>
+<input name="i4" type="file" id="i4"/>
+<input name="image5" type="file" id="image5"/>
 
 <br><br>
-            <button type="button" class="btn btn-success">Cadastrar</button>
+            <button type="submit" class="btn btn-success">Cadastrar</button>
             <button type="button" class="btn btn-danger">Cancelar</button>
             </div>
             

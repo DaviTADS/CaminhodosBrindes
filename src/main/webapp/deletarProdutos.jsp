@@ -71,11 +71,11 @@
         
         <div class="container">
             <h3><b>Deletar Produto</b></h3>  
-           <form action="editarProduto" method="post">
+           <form action="DeleteProduto" method="post">
   <div class="form-group">
      
-    <label for="email">Nome do Produto</label>
-    <input type="email" class="form-control" id="email">
+    <label for="nome">Nome do Produto</label>
+    <input name="nome"type="text" class="form-control" id="nome">
  
     <br>
           <button type="submit" class="btn btn-primary">Procurar</button>

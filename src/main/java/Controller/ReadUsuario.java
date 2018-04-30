@@ -3,8 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
-package Controller;
+package controller;
 
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -36,7 +35,7 @@ public class ReadUsuario extends HttpServlet {
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
-            out.println("<title>Servlet ReadUsuario</title>");            
+            out.println("<title>Servlet ReadUsuario</title>");
             out.println("</head>");
             out.println("<body>");
             out.println("<h1>Servlet ReadUsuario at " + request.getContextPath() + "</h1>");

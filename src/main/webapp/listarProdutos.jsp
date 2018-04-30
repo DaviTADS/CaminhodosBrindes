@@ -4,7 +4,13 @@
     Author     : Nome
 --%>
 
+<%@page import="java.util.List"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+
+
+<% List listaa = (List)session.getAttribute("lista");
+   request.setAttribute("listaa", listaa);
+%>
 <!DOCTYPE html>
 <html>
     <head>
@@ -115,19 +121,19 @@
       </tr>
     </thead>
     <tbody>
-        <c:forEach items="${produto}" var="produto">
+        <c:forEach items="${listaa}" var="produto">
       <tr>
-        <td><c:out value="${produto.id}" /></td>
+        <td><c:out value="${produto.iDProduto}" /></td>
         <td><c:out value="${produto.nome}"/></td>
-        <td><c:out value="${produto.altura}"/></td>
-        <td><c:out value="${produto.largura}"/></td>
+        <td><c:out value="${produto.tamanhoAltura}"/></td>
+        <td><c:out value="${produto.tamanhoLargura}"/></td>
         <td><c:out value="${produto.quantidade}"/></td>
-        <td><c:out value="${produto.tipo}"/></td>
+        <td><c:out value="${produto.Tipo}"/></td>
         <td><c:out value="${produto.preco}"/></td>
-
-        <td><a href="EditProduto"/>Update</a></td>
-<td><a href="DeleteProduto"/>Delete</a></td>
-        </tr></c:foreach>
+           
+        <td><a href="EditProduto"/>Editar</a></td>
+<td><a href="DeleteProduto"/>Deletar</a></td>
+      </tr> </c:forEach>
     </tbody>
   </table>
    </div>
