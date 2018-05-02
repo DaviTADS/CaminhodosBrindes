@@ -32,7 +32,18 @@ return factory.createEntityManager();}
        }
     return cliente;
 }
-    public void deletar(int id){
+    public void deletarProduto(int id){
+    EntityManager em = getEM();
+    Produto produto = em.find(Produto.class, id);
+    try{
+    em.getTransaction().begin();
+    em.remove(produto); // remove
+    em.getTransaction().commit();}
+    finally{
+        em.close();
+    }
+}
+     public void deletarCliente(int id){
     EntityManager em = getEM();
     Cliente cliente = em.find(Cliente.class, id);
     try{
@@ -43,7 +54,6 @@ return factory.createEntityManager();}
         em.close();
     }
 }
-    
     public Cliente ConsultarPorID(int id){
     EntityManager em = getEM();
   Cliente cliente =null;
@@ -114,7 +124,81 @@ public List<Produto> findAll() throws Exception{
             
             return listProd;    
 }
-
+public List<Cliente> findAllCliente() throws Exception{
+    EntityManager em = getEM();
+     List<Cliente> listClie;
+    try{
+        em.getTransaction().begin();
+          listClie = em.createNativeQuery("SELECT * FROM tb_cliente",Cliente.class).getResultList();
+           
+          if(listClie==null){
+              throw new Exception  ("Erro ao atualizar") ;  
+          }
+       em.getTransaction().commit();
+    }
+    finally{
+        em.close();
+    }
+            
+            return listClie;    
+}
+public Produto editar (int i){
+    EntityManager em = getEM();
+  Produto cliente =null;
+    try{
+    em.getTransaction().begin();
+     cliente = em.find(Produto.class, i);
+    em.getTransaction().commit();}
+    finally{
+        em.close();
+    }
+    return cliente;
+}
+public Cliente edita (int i){
+    EntityManager em = getEM();
+ Cliente cliente =null;
+    try{
+    em.getTransaction().begin();
+     cliente = em.find(Cliente.class, i);
+    em.getTransaction().commit();}
+    finally{
+        em.close();
+    }
+    return cliente;
+}
+public Produto AtualizarProd (Produto prod)throws Exception{
+         EntityManager em = getEM();
+       try{
+        em.getTransaction().begin();
+       
+       
+            
+        prod = em.merge(prod); //Update
+        em.getTransaction().commit();}
+    finally{
+           em.close();
+       
+    
+        
+    }
+return prod;}
+public Cliente AtualizarClie (Cliente Cli)throws Exception{
+         EntityManager em = getEM();
+       try{
+        em.getTransaction().begin();
+       
+       
+            
+        Cli = em.merge(Cli); //Update
+        em.getTransaction().commit();}
+    finally{
+           em.close();
+       
+    
+        
+    }
+return Cli;}
 
 
 }
+

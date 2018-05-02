@@ -55,7 +55,7 @@
         <span class="caret"></span></a>
          <ul class="dropdown-menu">
             
-             <li><a href="SobreUsuario.jsp"><font color="yellow"><span class="glyphicon glyphicon-user"></span> Sobre Usuario</font></a><li>
+             <li><a href="EditUsuario"><font color="yellow"><span class="glyphicon glyphicon-user"></span> Editar Usuario</font></a><li>
             <li><a href=minhasCompras.jsp"><font color="yellow"><span class="glyphicon glyphicon-shopping-cart"></span> Minhas Compras</font></a></li>
             <li><a href="LogoutServlet"><font color="yellow"><span class="glyphicon glyphicon-log-out"></span>Logout</font></a></li></ul></li>
       

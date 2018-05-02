@@ -11,6 +11,9 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import model.Cliente;
+import model.Produto;
+import model.SystemManager;
 
 /**
  *
@@ -27,22 +30,7 @@ public class EditUsuario extends HttpServlet {
      * @throws ServletException if a servlet-specific error occurs
      * @throws IOException if an I/O error occurs
      */
-    protected void processRequest(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
-        response.setContentType("text/html;charset=UTF-8");
-        try (PrintWriter out = response.getWriter()) {
-            /* TODO output your page here. You may use following sample code. */
-            out.println("<!DOCTYPE html>");
-            out.println("<html>");
-            out.println("<head>");
-            out.println("<title>Servlet EditUsuario</title>");
-            out.println("</head>");
-            out.println("<body>");
-            out.println("<h1>Servlet EditUsuario at " + request.getContextPath() + "</h1>");
-            out.println("</body>");
-            out.println("</html>");
-        }
-    }
+
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**
@@ -56,7 +44,14 @@ public class EditUsuario extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
+         // String id = request.getParameter("id");
+       SystemManager em = new SystemManager();
+      // int i = Integer.parseInt(id);
+       int i = 1;
+       Cliente p = new Cliente();
+       p=em.edita(i);
+       request.setAttribute("cliente", p);
+        request.getRequestDispatcher("editarUsuario.jsp").forward(request,response);
     }
 
     /**
@@ -70,7 +65,39 @@ public class EditUsuario extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
+         Cliente cliente = new Cliente();
+        SystemManager em = new SystemManager();
+        String nome = request.getParameter("Nome_cliente");
+        String email = request.getParameter("Email_cliente");
+        String login = request.getParameter("Login_cliente");
+        String senha = request.getParameter("Senha_cliente");
+        String sobrenome = request.getParameter("Sobrenome_cliente");
+        String bairro = request.getParameter("Bairro_cliente");
+        String cidade = request.getParameter("Cidade_cliente");
+        String c = request.getParameter("Cep_cliente");       
+        String telefone = request.getParameter("Telefone_cliente");
+        String celular = request.getParameter("Celular_cliente");
+         String id = request.getParameter("id");
+        int i = Integer.parseInt(id);
+        cliente.setUserID(i);
+        cliente.setBairroUsuario(bairro);
+        cliente.setCelularUsuario(celular);
+        cliente.setCepUsuario(c);
+        cliente.setEmail(email);
+        cliente.setLogin(login);
+        cliente.setNome(nome);
+        cliente.setSobrenomeUsuario(sobrenome);
+        cliente.setTelefoneUsuario(telefone);
+        cliente.setSenha(senha);
+        cliente.setCidadeUsuario(cidade);
+        try {
+            cliente = em.Salvar(cliente);
+            
+            response.sendRedirect("inicio.jsp");
+        } catch (Exception ex) {
+            System.out.println("DEU ERRO"+ex);
+        }
+         System.out.println(cliente);
     }
 
     /**

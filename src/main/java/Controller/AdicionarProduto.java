@@ -59,6 +59,7 @@ public class AdicionarProduto extends HttpServlet {
         String altura = request.getParameter("Altura_produto");
         String largura = request.getParameter("Largura_produto");
         String quantidade = request.getParameter("Quantidade_produto");
+        int q = Integer.parseInt(quantidade);
         String image1 = request.getParameter("image1");
         String image2 = request.getParameter("image2");
         String image3 = request.getParameter("image3");
@@ -96,6 +97,8 @@ public class AdicionarProduto extends HttpServlet {
          produto.setImage05(imagem05);}
         if (nome != null) {
             produto.setNome(nome);
+            produto.setTipo(tipo);
+            produto.setQuantidade(q);
         } else {
         }
         if (altura != null) {

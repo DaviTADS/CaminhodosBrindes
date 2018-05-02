@@ -51,24 +51,15 @@ public class DeleteProduto extends HttpServlet {
      * @throws IOException if an I/O error occurs
      */
     @Override
-    protected void doPost(HttpServletRequest request, HttpServletResponse response)
+    protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-       String nome = request.getParameter("nome");
+       String id = request.getParameter("id");
        SystemManager em = new SystemManager();
-       try{
-       em.deletarProd(nome);
-           
-            response.sendRedirect("telaADM.jsp");  
-              
-            HttpSession session=request.getSession();  
-            session.invalidate();  
-              
-            
-              
-            out.close();  }
-      catch (Exception ex){
-          System.out.println("Erro"+ex);
-      }
+       int i = Integer.parseInt(id);
+       em.deletarProduto(i);
+        response.sendRedirect("ListarProdutos");  
+       response.setIntHeader("Refresh", 5);
+ 
     }
 
     /**

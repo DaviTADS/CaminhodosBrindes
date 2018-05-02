@@ -48,6 +48,10 @@
         <servlet-name>ListarProdutos</servlet-name>
         <servlet-class>controller.ListarProdutos</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>ListarUsuarios</servlet-name>
+        <servlet-class>controller.ListarUsuarios</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>AdicionarProduto</servlet-name>
         <url-pattern>/AdicionarProduto</url-pattern>
@@ -95,6 +99,10 @@
     <servlet-mapping>
         <servlet-name>ListarProdutos</servlet-name>
         <url-pattern>/ListarProdutos</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ListarUsuarios</servlet-name>
+        <url-pattern>/ListarUsuarios</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

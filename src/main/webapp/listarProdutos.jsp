@@ -6,11 +6,9 @@
 
 <%@page import="java.util.List"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 
 
-<% List listaa = (List)session.getAttribute("lista");
-   request.setAttribute("listaa", listaa);
-%>
 <!DOCTYPE html>
 <html>
     <head>
@@ -55,16 +53,16 @@
         <a class="dropdown-toggle" data-toggle="dropdown" href="#"><font color="yellow">Usuários</font>
         <span class="caret"></span></a>
          <ul class="dropdown-menu">
-            <li><a href="listarUsuarios.jsp"><font color="yellow"><span class="glyphicon glyphicon-list-alt"></span> Listar usuários</font></a></li>
-            <li><a href="deletarUsuarios.jsp"><font color="yellow"><span class="glyphicon glyphicon-remove"></span> Deletar usuários</font></a></li></ul></li>
+            <li><a href="ListarUsuarios"><font color="yellow"><span class="glyphicon glyphicon-list-alt"></span> Listar usuários</font></a></li>
+            </ul></li>
           <li class="dropdown">
         <a class="dropdown-toggle" data-toggle="dropdown" href="#"><font color="yellow">Produtos</font>
         <span class="caret"></span></a>
          <ul class="dropdown-menu">
              <li><a href="cadastroProdutos.jsp"><font color="yellow"><span class="glyphicon glyphicon-plus"></span> Cadastrar Produtos</font></a><li>
-            <li><a href="editarProduto.jsp"><font color="yellow"><span class="glyphicon glyphicon-edit"></span> Editar Produtos</font></a><li>
-          <li><a href="ListarProduto.jsp"><font color="yellow"><span class="glyphicon glyphicon-list-alt"></span> Listar Produtos</font></a><li>
-       <li><a href="deletarProdutos.jsp"><font color="yellow"><span class="glyphicon glyphicon-remove"></span> Deletar Produtos</font></a><li></ul></li>
+            
+          <li><a href="ListarProdutos"><font color="yellow"><span class="glyphicon glyphicon-list-alt"></span> Listar Produtos</font></a><li>
+</ul></li>
           
        <li><a href="inicio.jsp"><font color="yellow"><span class="glyphicon glyphicon-log-out"></span> Sair</font></a></li>
      
@@ -112,8 +110,8 @@
       <tr>
         <th style="padding: 15px">ID</th>
         <th style="padding: 15px">Nome</th>
-        <th style="padding: 15px">Altura</th>
-        <th style="padding: 15px">Largura</th>
+        <th style="padding: 15px">Altura (Metros)</th>
+        <th style="padding: 15px">Largura (Metros)</th>
         <th style="padding: 15px">Quantidade</th>
         <th style="padding: 15px">Tipo</th>
         <th style="padding: 15px">Preço</th>
@@ -121,18 +119,18 @@
       </tr>
     </thead>
     <tbody>
-        <c:forEach items="${listaa}" var="produto">
+        <c:forEach items="${lista}" var="produto">
       <tr>
-        <td><c:out value="${produto.iDProduto}" /></td>
+        <td><c:out value="${produto.IDProduto}"/></td>
         <td><c:out value="${produto.nome}"/></td>
         <td><c:out value="${produto.tamanhoAltura}"/></td>
         <td><c:out value="${produto.tamanhoLargura}"/></td>
         <td><c:out value="${produto.quantidade}"/></td>
-        <td><c:out value="${produto.Tipo}"/></td>
+        <td><c:out value="${produto.tipo}"/></td>
         <td><c:out value="${produto.preco}"/></td>
            
-        <td><a href="EditProduto"/>Editar</a></td>
-<td><a href="DeleteProduto"/>Deletar</a></td>
+        <td><a href="EditProduto?id=${produto.IDProduto}"/>Editar</a></td>
+        <td><a href="DeleteProduto?id=${produto.IDProduto}"/>Deletar</a></td>
       </tr> </c:forEach>
     </tbody>
   </table>

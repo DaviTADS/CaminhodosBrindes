@@ -15,6 +15,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import model.Produto;
 import model.SystemManager;
 
@@ -53,10 +54,9 @@ public class ListarProdutos extends HttpServlet {
             List<Produto> lista ;
         try {
             lista=em.findAll();
-            System.out.println(lista.get(0).getNome());
-            
-             response.sendRedirect("listarProdutos.jsp");
-              request.setAttribute("lista", lista);
+            System.out.println(lista.get(0).getTipo());
+            request.setAttribute("lista", lista);
+            request.getRequestDispatcher("listarProdutos.jsp").forward(request,response);
         } catch (Exception ex) {
             System.out.println("ERROR          "+ex);
         }
